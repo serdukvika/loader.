@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      h1 {
+        margin: 0;
+      }
+      #loader {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 9999;
+        background: url("images/loading--big.gif") no-repeat center center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader"></div>
+    <div id="contents">
+      <h1>Lorem, ipsum dolor.</h1>
+      <img src="images/logo.svg" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        adipisci omnis culpa ducimus non labore? Porro aperiam asperiores
+        deserunt voluptas unde, natus, architecto ex impedit vel, corporis
+        provident! Natus, magni.
+      </p>
+      <p>
+        Architecto accusamus ipsum adipisci, at mollitia incidunt aliquam eius
+        quod enim soluta quas labore voluptatem minima dignissimos amet fugit
+        perspiciatis iusto sunt repellat quibusdam dolores id! Doloremque
+        voluptates corrupti recusandae.
+      </p>
+      <p>
+        Inventore dolorum autem quae quasi voluptate! Assumenda nostrum voluptas
+        saepe tempore veniam error dolorem aperiam at quo commodi hic non,
+        temporibus eligendi debitis fugit minima illo, a pariatur dolor
+        consectetur.
+      </p>
+      <p>
+        Ipsam officia commodi repellat dolor earum? Ab ullam iure ea reiciendis
+        in cupiditate debitis, explicabo beatae perspiciatis! Quidem illum odit
+        iure qui fuga tempora soluta eum asperiores, itaque totam quisquam.
+      </p>
+      <p>
+        Reiciendis nemo est culpa, non placeat, sit autem quae, ipsam
+        exercitationem repellat beatae? Libero, consequatur cumque. Magni
+        eveniet perferendis, a officia ducimus eius ut id ipsum dolore non
+        laboriosam. Id?
+      </p>
+    </div>
+    <script>
+      document.onreadystatechange = function () {
+        let state = document.readyState;
+        if (state == "interactive") {
+          document.getElementById("contents").style.visibility = "hidden";
+          document.getElementById("loader").style.visibility = "visible";
+        } else if (state == "complete") {
+          setTimeout(function () {
+            document.getElementById("loader").style.visibility = "hidden";
+            document.getElementById("contents").style.visibility = "visible";
+          }, 2000);
+        }
+      };
+    </script>
+  </body>
+</html>
